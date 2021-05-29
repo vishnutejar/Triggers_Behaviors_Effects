@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Triggers_Behaviors_Effects.PropertyTriggersExample"
+             Title="Property Triggers Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Insert Your Name">
+                <Entry.Triggers>
+                    <Trigger
+                        TargetType="Entry"
+                        Property="Text"
+                        Value="vishnu">
+                        <Setter Property="BackgroundColor" Value="Blue"/>
+                        <Setter Property="TextColor" Value="White"/>
+                        <Setter Property="Scale" Value="1.0"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

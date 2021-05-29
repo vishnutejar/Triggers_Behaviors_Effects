@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Triggers_Behaviors_Effects"
+             x:Class="Triggers_Behaviors_Effects.EventTriggerExample">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Button Text="Defult button"/>
+            <Button Text="Added my action Click me!">
+                <Button.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <local:TriggerActionCustom/>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

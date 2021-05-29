@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Triggers_Behaviors_Effects.MultiTriggersExample">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="user" Placeholder="Enter Your Name"></Entry>
+            <Entry x:Name="password" Placeholder="Enter Your password"></Entry>
+            <Button Text="Login" IsEnabled="False" BackgroundColor="Gray" TextColor="White">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference user},Path=Text}" Value="vishnu"/>
+                            <BindingCondition Binding="{Binding Source={x:Reference password},Path=Text}" Value="1234"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="BackgroundColor" Value="Green"/>
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

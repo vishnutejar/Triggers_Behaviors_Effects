@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Triggers_Behaviors_Effects.DataTriggerEmaple">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="lbFirstName" Placeholder="Enter Your Phone Number" Text=""></Entry>
+            <Entry x:Name="lbLastName" Placeholder="Enter Your LastName">
+                <Entry.Triggers>
+                    <DataTrigger
+                        TargetType="Entry"
+                        Binding="{Binding Source={x:Reference lbFirstName},Path=Text.Length}" Value="0">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                        
+                    </DataTrigger>
+                </Entry.Triggers>
+            </Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
